@@ -1,0 +1,31 @@
+<a class="btn btn-outline-primary my-2" href="#!category-list">
+  <i class="fas fa-arrow-left me-2"></i>Quay lại danh sách
+</a>
+
+<div class="">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title text-center">Cập nhật danh mục </h2>
+        </div>
+        <div class="card-body">
+
+          <div class="alert alert-danger" ng-if="err">
+            <strong>Lỗi form!</strong> {{err}}.
+          </div>
+          
+          <form>
+            <div class="mb-3">
+              <label for="productName" class="form-label">Tên danh mục:</label>
+              <input type="text" class="form-control" id="productName" placeholder="Nhập tên danh mục"
+                ng-model="catList.ten">
+            </div>
+
+            <button type="submit" ng-click="onClickEdit()" class="btn btn-primary">Cập nhật</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

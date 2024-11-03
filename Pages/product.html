@@ -1,0 +1,272 @@
+<div class="container ">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h2 class="fs-1 mt-5">Tất cả sản phẩm</h2>
+        <!-- <a class="border border-2 border-warning-subtle text-warning px-2 py-2 mt-5 text-decoration-none "
+            href="../#">Tất
+            cả sản phẩm</a> -->
+    </div>
+
+    <!-- products  -->
+    <div class="row ">
+        <!-- row-cols-4 g-4 -->
+        <!-- <div class="col-12"> -->
+
+        <div class="col-md-3 mt-3">
+            <div class="bg-light p-3 border rounded">
+                <h4 class="mb-3">Lọc sản phẩm</h4>
+
+                <!-- Ô tìm kiếm -->
+                <div class="mb-3">
+                    <h5>Tìm kiếm</h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" aria-label="Tìm kiếm"
+                            aria-describedby="button-search" ng-model="searchName">
+                        <button class="btn btn-outline-secondary" type="button" id="button-search"><i
+                                class="fas fa-search" ng-click="searchProducts()"></i></button>
+                    </div>
+                </div>
+
+                <!-- Lọc theo màu sắc -->
+                <!-- <div class="mb-3">
+                    <h5>Màu sắc</h5>
+                    <div class="d-flex flex-wrap">
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="checkbox" value="" id="colorBlack">
+                            <label class="form-check-label" for="colorBlack">Đen</label>
+                        </div>
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="checkbox" value="" id="colorWhite">
+                            <label class="form-check-label" for="colorWhite">Trắng</label>
+                        </div>
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="checkbox" value="" id="colorRed">
+                            <label class="form-check-label" for="colorRed">Đỏ</label>
+                        </div>
+                      
+                    </div>
+                </div> -->
+
+                <!-- Lọc theo kích thước -->
+                <!-- <div class="mb-3">
+                    <h5>Kích thước</h5>
+                    <div class="d-flex flex-wrap">
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="checkbox" value="" id="size37">
+                            <label class="form-check-label" for="size37">37</label>
+                        </div>
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="checkbox" value="" id="size38">
+                            <label class="form-check-label" for="size38">38</label>
+                        </div>
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="checkbox" value="" id="size39">
+                            <label class="form-check-label" for="size39">39</label>
+                        </div>
+                       
+                    </div>
+                </div> -->
+
+                <!-- Lọc theo giá (select) -->
+                <!-- <div class="mb-3">
+                    <h5>Giá</h5>
+                    <select class="form-select" aria-label="Chọn khoảng giá">
+                        <option selected>Tất cả giá</option>
+                        <option value="1">Dưới 1,000,000đ</option>
+                        <option value="2">1,000,000đ - 2,000,000đ</option>
+                        <option value="3">2,000,000đ - 3,000,000đ</option>
+                        <option value="4">3,000,000đ - 4,000,000đ</option>
+                        <option value="5">Trên 4,000,000đ</option>
+                    </select>
+                </div> -->
+
+                <!-- Select cho danh mục -->
+                <div class="mb-3">
+                    <h5>Danh mục</h5>
+                    <select class="form-select" aria-label="Chọn danh mục" ng-change="onChangeDanhMuc()"
+                        ng-model="filterDM">
+                        <option selected value="">Tất cả danh mục</option>
+                        <option ng-repeat="item in catList track by $index" value="{{item.id}}">{{item.ten}}</option>
+
+                    </select>
+                </div>
+
+                <!-- Sắp xếp -->
+                <div class="mb-3">
+                    <h5>Sắp xếp</h5>
+                    <select class="form-select" aria-label="Sắp xếp" ng-change="onChangeSP()" ng-model="sortSP">
+                        <option selected value="">Mặc định</option>
+                        <option value="giaBan">Giá tăng dần</option>
+                        <option value="-giaBan">Giá giảm dần</option>
+
+                    </select>
+                </div>
+
+                <!-- Nút áp dụng bộ lọc -->
+                <!-- <button class="btn btn-primary w-100">Áp dụng</button> -->
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+
+                <div class="col-md-4 my-3" ng-repeat="item in prdList | filter:filterPRD track by $index">
+                    <div class="border rounded overflow-hidden">
+                        <div class="bg-light ratio mt-" style="--bs-aspect-ratio: calc(600 / 485 * 100%)">
+                            <div class="d-flex justify-content-center align-items-center ">
+                                <a href="#!/product-detail/{{item.id}}"><img class="img-hover mh-100 mw-100"
+                                        ng-src="{{item.anh}}" alt=""> </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-body-tertiary  mt- py-2 px-4">
+                            <h3><a class="text-decoration-none text-black"
+                                    href="#!/product-detail/{{item.id}}">{{item.ten}}</a>
+                            </h3>
+                            <p>{{item.moTa}}</p>
+                            <p class="text-danger fs-5 fw-bold">{{item.giaBan}} VND</p>
+                            <a class="py-2  w-100 btn btn-outline-warning rounded-pill  fw-bold  btn-hv"
+                                href="#!product-detail/{{item.id}}">Xem chi tiết</a>
+                            <!-- <button class="py-2  w-100 btn btn-outline-warning rounded-pill  fw-bold  btn-hv">Xem chi tiết</button> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-md-4 my-3">
+                    <div class="border rounded overflow-hidden">
+                        <div class="bg-light ratio mt-" style="--bs-aspect-ratio: calc(600 / 485 * 100%)">
+                            <div class="d-flex justify-content-center align-items-center ">
+                                <a href="../detail.html"><img class="img-hover mh-100 mw-100"
+                                        src="../assets/images/50sis_3arncrl4n_2_1d5fccbf3bd445c78d5873eb7435c4c4_47112259284743aa8d04766b00e560ea_grande.webp"
+                                        alt=""> </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-body-tertiary  mt- py-2 px-4">
+                            <h3><a class="text-decoration-none text-black" href="../detail.html"> Chunky Runner
+                                    Race</a>
+                            </h3>
+                            <p>MLB - Giày sneakers unisex cổ thấp</p>
+                            <p class="text-danger fs-5 fw-bold">4,190,000₫</p>
+                            <button class="py-2  w-100 btn btn-outline-warning rounded-pill  fw-bold  btn-hv">Thêm
+                                vào
+                                giỏ
+                                hàng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 my-3">
+                    <div class="border rounded overflow-hidden">
+                        <div class="bg-light ratio mt-" style="--bs-aspect-ratio: calc(600 / 485 * 100%)">
+                            <div class="d-flex justify-content-center align-items-center ">
+                                <a href="../detail.html"><img class="img-hover mh-100 mw-100"
+                                        src="../assets/images/50pks_3asxcmm4n_2_2759bf1e070948c1bbb3b81b5d274158_a01effb36e084c5493880fabbe9bdf05_grande.webp"
+                                        alt=""> </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-body-tertiary  mt- py-2 px-4">
+                            <h3><a class="text-decoration-none text-black" href="../detail.html"> Chunky Liner Mid
+                                    Classic
+                                </a></h3>
+                            <p>MLB - Giày sneakers unisex cổ thấp</p>
+                            <p class="text-danger fs-5 fw-bold">4,390,000₫</p>
+                            <button class="py-2  w-100 btn btn-outline-warning rounded-pill  fw-bold  btn-hv">Thêm
+                                vào
+                                giỏ
+                                hàng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 my-3">
+                    <div class="border rounded overflow-hidden">
+                        <div class="bg-light ratio mt-" style="--bs-aspect-ratio: calc(600 / 485 * 100%)">
+                            <div class="d-flex justify-content-center align-items-center ">
+                                <a href="../detail.html"><img class="img-hover mh-100 mw-100"
+                                        src="../assets/images/07bls_3asxlmf3n_2_5ebe4a60d816467d95b1c7ad421b42b3_c60b51e74ead453683fe294a2cc94784_grande.webp"
+                                        alt=""> </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-body-tertiary  mt- py-2 px-4">
+                            <h3><a class="text-decoration-none text-black" href="../detail.html"> Chunky Liner Mid
+                                    Saffiano</a></h3>
+                            <p>MLB - Giày sneakers unisex cổ thấp</p>
+                            <p class="text-danger fs-5 fw-bold">3.790.000đ</p>
+                            <button class="py-2  w-100 btn btn-outline-warning rounded-pill  fw-bold  btn-hv">Thêm
+                                vào
+                                giỏ
+                                hàng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 my-3">
+                    <div class="border rounded overflow-hidden">
+                        <div class="bg-light ratio mt-" style="--bs-aspect-ratio: calc(600 / 485 * 100%)">
+                            <div class="d-flex justify-content-center align-items-center ">
+                                <a href="../detail.html"><img class="img-hover mh-100 mw-100"
+                                        src="../assets/images/50bks_3asxccw4n_2_bb40200e8da44811a0ecdc447e29ec25_427be735f93c4061a1832d3931904ef7_grande.webp"
+                                        alt=""> </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-body-tertiary  mt- py-2 px-4">
+                            <h3><a class="text-decoration-none text-black" href="../detail.html">Chunky Wide
+                                    Strike</a>
+                            </h3>
+                            <p>MLB - Giày sneakers unisex cổ thấp </p>
+                            <p class="text-danger fs-5 fw-bold">3,590,000₫</p>
+                            <button class="py-2  w-100 btn btn-outline-warning rounded-pill  fw-bold  btn-hv">Thêm
+                                vào
+                                giỏ
+                                hàng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 my-3">
+                    <div class="border rounded overflow-hidden">
+                        <div class="bg-light ratio mt-" style="--bs-aspect-ratio: calc(600 / 485 * 100%)">
+                            <div class="d-flex justify-content-center align-items-center ">
+                                <a href="../detail.html"><img class="img-hover mh-100 mw-100"
+                                        src="../assets/images/50sis_3arncrl4n_2_1d5fccbf3bd445c78d5873eb7435c4c4_47112259284743aa8d04766b00e560ea_grande.webp"
+                                        alt=""> </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-body-tertiary  mt- py-2 px-4">
+                            <h3><a class="text-decoration-none text-black" href="../detail.html"> Chunky Runner
+                                    Race</a>
+                            </h3>
+                            <p>MLB - Giày sneakers unisex cổ thấp</p>
+                            <p class="text-danger fs-5 fw-bold">4,190,000₫</p>
+                            <button class="py-2  w-100 btn btn-outline-warning rounded-pill  fw-bold  btn-hv">Thêm
+                                vào
+                                giỏ
+                                hàng</button>
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+            <!-- pagination -->
+            <div class="d-flex justify-content-center">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="../#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="../#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="../#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="../#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="../#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</div>

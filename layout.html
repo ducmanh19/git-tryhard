@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang chủ</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="bootstrap/lib/bootstrap.min.css">
+  <!-- Latest compiled JavaScript -->
+  <script src="bootstrap/lib/bootstrap.bundle.min.js"></script>
+  <!-- Link icon -->
+  <script src="https://kit.fontawesome.com/180dd5dcef.js" crossorigin="anonymous"></script>
+  <!-- link css  -->
+  <link rel="stylesheet" href="assets/css/css.css">
+</head>
+
+<body>
+  <!-- Navbar  -->
+  <!-- Navbar  -->
+  <div class="container">
+    <nav class="navbar navbar-expand-sm ">
+
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="index.html"><img class="mw-100 " style="max-height: 50px;" src="assets/images/logo2.webp" alt="">
+            </a>
+
+          </li>
+        </ul>
+        <!-- Links -->
+        <ul class="navbar-nav fw-medium">
+          <li class="nav-item ">
+            <a class="nav-link text-dark fs-5 lh-lg " href="index.html">Trang chủ </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark fs-5 lh-lg" href="products.html">Sản phẩm </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark fs-5 lh-lg" href="#">Giới thiệu </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark fs-5 lh-lg" href="#">Liên hệ </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="login.html" id="navbarDropdown">
+              <i class="fa-regular fa-user"></i> Admin
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
+              <li><a class="dropdown-item" href="Admin/index.html">Trang admin</a></li>
+              <li><a class="dropdown-item" href="login.html">Đăng xuất</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </div>
+  <!-- Navbar end -->
+
+  <!-- slide show  -->
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="bg-light ratio" style="--bs-aspect-ratio: calc(640 / 1920 * 100%)">
+          <div class="d-flex justify-content-center align-items-center">
+            <img src="assets/images/slider2.webp" class="d-block mw-100 mh-100">
+          </div>
+        </div>
+
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center align-items-center">
+          <img src="assets/images/slider1.webp" class="d-block mw-100 mh-100">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center align-items-center">
+          <img src="assets/images/slider3.webp" class="d-block mw-100 mh-100">
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <main>
+
+  </main>
+
+  <footer class="bg-black text-white pt-5 ">
+    <div class="container  mb-16 ">
+
+      <div class="row row-cols-4">
+
+        <div>
+          <h3 class="font-semibold  mb-4">Địa chỉ</h3>
+          <p>13 phố Trịnh Văn Bô, phường Phương Canh, quận Nam Từ Liêm, TP Hà Nội</p>
+        </div>
+
+        <div class="">
+          <h3 class="font-semibold  mb-4">Danh mục</h3>
+          <ul class="list-unstyled">
+            <li class="mb-4 "><a class="text-decoration-none text-white" href="">Home</a></li>
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">Shop</a></li>
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">About</a></li>
+            <li><a class="text-decoration-none text-white" href="">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="d-flex flex-column">
+          <h3 class="font-semibold  mb-4">Hỗ trợ khách hàng</h3>
+          <ul class="list-unstyled">
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">Hướng dẫn mua hàng</a></li>
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">Chính sách giao hàng</a></li>
+            <li><a class="text-decoration-none text-white" href="">Chính sách đổi trả hoàn tiền</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-semibold  mb-4">Liên hệ</h3>
+          <ul class="list-unstyled">
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">manhndph46076@fpt.edu.vn</a></li>
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">Hệ thống cửa hàng</a></li>
+            <li><a class="text-decoration-none text-white" href="">Trợ giúp</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="container mb-3">
+      <h3 class="font-semibold mb-3">Kết nối với chúng tôi</h3>
+      <div class="d-flex">
+        <a href="#" class="me-3 text-white"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="me-3 text-white"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="me-3 text-white"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <hr />
+    <div class="text-center py-3">
+      <p class="m-0">© 2024 Nguyen Duc Manh.</p>
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<h2 class="mb-4 text-center">Chi tiết  đơn hàng</h2>
+<a class="btn btn-outline-primary my-2" href="#!order-list">
+  <i class="fas fa-arrow-left me-2"></i>Quay lại
+</a>
+<div class="row">
+  <!-- Thông tin  đơn hàng -->
+  <div class="col-md-6 mb-4">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>Thông tin  đơn hàng</h5>
+      </div>
+      <div class="card-body" >
+        <p><strong>Mã  đơn hàng:</strong> {{orderList.id}}</p>
+        <p><strong>Ngày  đặt:</strong>  {{orderList.date}}</p>
+        <p><strong>Trạng thái:</strong> <span class="badge bg-warning"> {{orderList.status}}</span></p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Thông tin khách hàng -->
+  <div class="col-md-6 mb-4">
+    <div class="card">
+      <div class="card-header bg-success text-white">
+        <h5 class="mb-0"><i class="fas fa-user me-2"></i>Thông tin khách hàng</h5>
+      </div>
+      <div class="card-body">
+        <p><strong>Tên khách hàng:</strong>  {{orderList.full_name}}</p>
+        <p><strong> Địa chỉ:</strong>  {{orderList.address}}</p>
+        <p><strong>Số  điện thoại:</strong> {{orderList.phone_number}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chi tiết sản phẩm -->
+<div class="card mb-4">
+  <div class="card-header bg-info text-white">
+    <h5 class="mb-0"><i class="fas fa-shopping-cart me-2"></i>Chi tiết sản phẩm</h5>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Mã sản phẩm</th>
+          <th>Tên sản phẩm</th>
+          <th>Số lượng</th>
+          <th>Giá tiền</th>
+          <th>Thành tiền</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in orderPrd track by $index">
+          <td>{{$index + 1}}</td>
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.price}} đ</td>
+          <td>{{item.price * item.quantity}}  đ</td>
+        </tr>
+        <!-- <tr>
+          <td>2</td>
+          <td>SM333</td>
+          <td>Samsung galaxy xs</td>
+          <td>1</td>
+          <td>19.000.000 đ</td>
+          <td>19.000.000 đ</td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Tổng kết  đơn hàng -->
+<div class="card mb-4">
+  <div class="card-header bg-dark text-white">
+    <h5 class="mb-0"><i class="fas fa-calculator me-2"></i>Tổng kết  đơn hàng</h5>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6 offset-md-6">
+        <p class="d-flex justify-content-between">
+          <span>Tổng tiền sản phẩm:</span>
+          <strong>{{orderList.total_price - 30000}} đ</strong>
+        </p>
+        <p class="d-flex justify-content-between">
+          <span>Phí vận chuyển:</span>
+          <strong>30.000 đ</strong>
+        </p>
+        <hr>
+        <p class="d-flex justify-content-between">
+          <span>Tổng cộng:</span>
+          <strong>{{orderList.total_price }} đ</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Các nút chức năng -->
+<div class="d-flex justify-content-end mb-4">
+  <!-- <button class="btn btn-primary me-2"><i class="fas fa-print me-2"></i>In hóa  đơn</button> -->
+  <!-- <a href="../quan-ly-don-hang.html" class="btn btn-success me-2"><i class="fas fa-check me-2"></i>Cập nhật trạng
+    thái</a> -->
+  <!-- <button class="btn btn-info"><i class="fas fa-pen me-2"></i>Thêm ghi chú</button> -->
+</div>
+</div>

@@ -1,0 +1,52 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title text-center">Đăng ký</h2>
+        </div>
+        <div class="alert alert-danger" ng-if="err">
+          <strong>Lỗi đăng nhập!</strong> {{err}}.
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="username" class="form-label">Họ và tên:</label>
+              <input type="text" class="form-control" id="username" placeholder="Nhập họ tên" ng-model="acc.hoTen">
+            </div>
+
+            <div class="mb-3">
+              <label for="username" class="form-label">Số điện thoại:</label>
+              <input type="number" class="form-control" placeholder="Nhập số điện thoại" ng-model="acc.sdt">
+            </div>
+
+            <div class="mb-3">
+              <label for="username" class="form-label">Họ địa chỉ:</label>
+              <input type="text" class="form-control" placeholder="Nhập đại chỉ" ng-model="acc.diaChi">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Nhập email" ng-model="acc.email">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Mật khẩu:</label>
+              <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu"
+                ng-model="acc.matKhau">
+            </div>
+            <!-- <div class="mb-3">
+              <label for="password" class="form-label">Nhập lại mật khẩu:</label>
+              <input type="password" class="form-control" id="" placeholder="Nhập lại mật khẩu" >
+            </div> -->
+
+            <div class="d-flex justify-content-between">
+              <a href="#!account-login" class="btn btn-link">Quay lại </a>
+              <button ng-click="onClickRegester()" type="submit" class="btn btn-primary">Đăng ký</button>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

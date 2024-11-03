@@ -1,0 +1,129 @@
+<h2 class="mb-4">Quản lý đơn hàng</h2>
+
+<!-- Tổng quan thống kê -->
+<div class="row mb-4">
+  <div class="col-md-3">
+    <!-- <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Chờ xác nhận</h5>
+        <p class="card-text">15</p>
+      </div>
+    </div> -->
+  </div>
+  <!-- Thêm các card tương tự cho các trạng thái khác -->
+</div>
+
+<!-- Tìm kiếm và lọc -->
+<div class="row mb-3">
+  <div class="col-md-6">
+    <input type="text" class="form-control" placeholder="Tìm kiếm đơn hàng...">
+  </div>
+  <div class="col-md-3">
+    <select class="form-select" id="statusFilter" ng-change="onChangeStatus()" ng-model="filterStatus">
+      <option value="" selected>Tất cả trạng thái</option>
+      <option value="Chờ xác nhận">Chờ xác nhận</option>
+      <option value="Đang vận chuyển">Đang vận chuyển</option>
+      <option value="Đang giao">Đang giao</option>
+      <option value="Đã giao">Đã giao</option>
+      <option value="Đã hủy">Đã hủy</option>
+    </select>
+  </div>
+
+</div>
+
+<!-- Bảng đơn hàng -->
+<table class="table border table-bordered mt-4">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Mã đơn hàng</th>
+      <th>Ngày đặt</th>
+      <th>Khách hàng</th>
+      <th>Số lượng</th>
+      <th>Thành tiền</th>
+      <th>Trạng thái</th>
+      <th>Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in orderList track by $index">
+      <td>{{$index + 1}}</td>
+      <td>{{item.id}}</td>
+      <td>{{item.date}}</td>
+      <td>{{item.full_name}}</td>
+      <td> {{item.soLuong}}</td>
+      <td>{{item.total_price}}đ</td>
+      <td ng-model="item.status">{{item.status}}</td>
+      <td>
+        <button class="btn btn-sm btn-success" ng-click="onClickAgree(item.id)" title="Xác nhận"><i class="fa-solid fa-check"></i></button>
+        <button class="btn btn-sm btn-danger" ng-click="onClickCancel()" title="Hủy"><i
+            class="fa-solid fa-xmark"></i></button>
+        <a class="btn btn-sm btn-info" href="#!order-detail/{{item.id}}" title="Xem chi tiết"><i class="fa-regular fa-eye"></i></a>
+      </td>
+    </tr>
+    <!-- <tr>
+      <td>2</td>
+      <td>IP3855</td>
+      <td>2024-07-20</td>
+      <td>Trần Thị B</td>
+      <td>1</td>
+      <td>15.000.000đ</td>
+      <td>Đang vận chuyển</td>
+      <td>
+        <button class="btn btn-sm btn-success" title="Chuyển trạng thái tiếp"><i class="fa-solid fa-check"></i></button>
+        <a class="btn btn-sm btn-info" href="../don-hang-detail.html" title="Xem chi tiết"><i
+            class="fa-regular fa-eye"></i></a>
+      </td>
+    </tr> -->
+    <!-- <tr>
+      <td>3</td>
+      <td>IP3856</td>
+      <td>2024-07-21</td>
+      <td>Lê Văn C</td>
+      <td>3</td>
+      <td>30.000.000đ</td>
+      <td>Đang giao</td>
+      <td>
+        <button class="btn btn-sm btn-success" title="Xác nhận đã giao"><i class="fa-solid fa-check"></i></button>
+        <a class="btn btn-sm btn-info" href="../don-hang-detail.html" title="Xem chi tiết"><i
+            class="fa-regular fa-eye"></i></a>
+      </td>
+    </tr> -->
+    <!-- <tr> 
+      <td>4</td>
+      <td>IP3857</td>
+      <td>2024-07-22</td>
+      <td>Phạm Thị D</td>
+      <td>1</td>
+      <td>10.000.000đ</td>
+      <td>Đã giao</td>
+      <td>
+        <a class="btn btn-sm btn-info" href="../don-hang-detail.html" title="Xem chi tiết"><i
+            class="fa-regular fa-eye"></i></a>
+      </td>
+    </tr> -->
+  </tbody>
+</table>
+
+<!-- Phân trang -->
+<div class="d-flex justify-content-between align-items-center">
+  <!-- <div>
+    <select class="form-select form-select-sm" style="width: auto;">
+      <option value="10">10 đơn/trang</option>
+      <option value="25">25 đơn/trang</option>
+      <option value="50">50 đơn/trang</option>
+    </select>
+  </div> -->
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="../#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="../#">1</a></li>
+    <li class="page-item active"><a class="page-link" href="../#">2</a></li>
+    <li class="page-item"><a class="page-link" href="../#">3</a></li>
+    <li class="page-item"><a class="page-link" href="../#">Next</a></li>
+  </ul>
+</div>
+
+<!-- Nút xuất dữ liệu -->
+<!-- <div class="mt-3">
+  <button class="btn btn-success">Xuất Excel</button>
+</div> -->

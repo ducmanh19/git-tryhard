@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang chủ</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="../../bootstrap/lib/bootstrap.min.css">
+  <!-- Latest compiled JavaScript -->
+  <script src="../../bootstrap/lib/bootstrap.bundle.min.js"></script>
+  <!-- Link icon -->
+  <script src="https://kit.fontawesome.com/180dd5dcef.js" crossorigin="anonymous"></script>
+  <!-- link css  -->
+  <link rel="stylesheet" href="../../assets/css/css.css">
+  <!-- Link biểu đồ -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- link angular js  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <!-- Link route -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+  <!-- Viết logic -->
+  <script>
+    var adminApp = angular.module("adminApp", ["ngRoute"])
+    adminApp.config(function ($routeProvider) {
+      $routeProvider
+
+        .when("/", {
+          templateUrl: "dashboard.html"
+          // controller: ""
+        })
+        // Category
+        .when("/category-list", {
+          templateUrl: "Categories/index.html",
+          controller: "catListCtrl"
+        })
+        .when("/category-add", {
+          templateUrl: "Categories/add.html",
+          controller: "catAddCtrl"
+        })
+
+        .when("/category-edit/:id", {
+          templateUrl: "Categories/edit.html",
+          controller: "catEditCtrl"
+        })
+
+        // products
+        .when("/products-list", {
+          templateUrl: "Products/index.html",
+          controller: "prdListCtrl"
+        })
+        .when("/products-add", {
+          templateUrl: "Products/add.html",
+          controller: "prdAddCtrl"
+        })
+        .when("/products-detail/:id", {
+          templateUrl: "Products/detail.html",
+          controller: "prdDetailCtrl"
+        })
+        .when("/products-edit/:id", {
+          templateUrl: "Products/edit.html",
+          controller: "prdEditCtrl"
+        })
+
+
+        // Order
+        .when("/order-list", {
+          templateUrl: "Order/quan-ly-don-hang.html",
+          controller: "orderCtrl"
+        })
+        .when("/order-detail/:id", {
+          templateUrl: "Order/don-hang-detail.html",
+          controller: "orderDetailCtrl"
+        })
+
+    })
+  </script>
+
+  <!-- Link file js -->
+  <script src="Products/Javascrip/add.js"></script>
+  <script src="Products/Javascrip/detail.js"></script>
+  <script src="Products/Javascrip/edit.js"></script>
+  <script src="Products/Javascrip/list.js"></script>
+
+  <script src="Categories/JavaScrip/add.js"></script>
+  <script src="Categories/JavaScrip/edit.js"></script>
+  <script src="Categories/JavaScrip/list.js"></script>
+
+  <script src="Order/JavaScrip/don-hang-detail.js"></script>
+  <script src="Order/JavaScrip/quan-ly-don-hang.js"></script>
+
+
+
+</head>
+
+<body ng-app="adminApp">
+
+
+  <!-- Navbar  -->
+
+  <div class="">
+    <nav class="navbar navbar-expand-sm border-bottom ">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="#!/"><img class="mw-100 " style="max-height: 50px;" src="../../assets/images/logo2.webp" alt="">
+            </a>
+          </li>
+        </ul>
+
+        <div>
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html" title="Quay về trang chủ">
+                <i class="fa-solid fa-house"></i> Trang chủ
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="fa-regular fa-user"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="../login.html">Đăng xuất</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- Navbar end -->
+
+  <main>
+
+    <div class="d-flex">
+      <!-- siderbar -->
+      <div class="bg-light border-end" style="width: 300px; min-height: calc(100vh - 66px)">
+        <ul class="nav flex-column mt-3">
+          <li class="nav-item">
+            <a class="nav-link" href="#!category-list">Danh mục</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!products-list">Sản phẩm</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Thống kê</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!order-list">Đơn hàng</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Trang con -->
+      <div class="container w-100 py-4">
+        <ng-view></ng-view>
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+
+
+</body>
+
+</html>

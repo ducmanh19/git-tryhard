@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>Chi tiết sản phẩm</h1>
+  <a class="btn btn-outline-primary" href="#!products-list">
+    <i class="fas fa-arrow-left me-2"></i>Quay lại danh sách
+  </a>
+</div>
+
+<div class="row">
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Ảnh sản phẩm</h5>
+        <div class="text-center mb-3">
+          <img ng-src="/{{prdList.anh}}" alt="Ảnh sản phẩm" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title mb-4">Thông tin sản phẩm</h5>
+        <div class="mb-3">
+          <strong>Tên sản phẩm:</strong>
+
+          <input type="text" class="form-control" name="" id="" ng-model="prdList.ten" disabled>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <strong>Giá:</strong>
+            <input type="text" class="form-control" name="" id="" ng-model="prdList.giaBan" disabled>
+
+
+          </div>
+          <div class="col-md-6">
+            <strong>Danh mục:</strong>
+            <input type="text" class="form-control" name="" id="" ng-model="prdList.tenDanhMuc" disabled>
+
+
+          </div>
+        </div>
+        <div class="mb-3">
+          <strong>Mô tả sản phẩm:</strong>
+          <input type="text" class="form-control" name="" id="" ng-model="prdList.moTa" disabled>
+
+        </div>
+        <div class="text-center mb-3">
+          <button ng-click="onClickDelete(prdList.id)" class="btn btn-danger">Xóa sản phẩm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang chủ</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="bootstrap/lib/bootstrap.min.css">
+  <!-- Latest compiled JavaScript -->
+  <script src="bootstrap/lib/bootstrap.bundle.min.js"></script>
+  <!-- Link icon -->
+  <script src="https://kit.fontawesome.com/180dd5dcef.js" crossorigin="anonymous"></script>
+  <!-- link css  -->
+  <link rel="stylesheet" href="assets/css/css.css">
+  <!-- 3. Nhúng thư viện angular js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <!-- Lấy dữ liệu từ database -->
+  <!--4 Link route -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+  <script>
+    var userApp = angular.module("userApp", ["ngRoute"])
+    userApp.controller("danhMucCtrl", function ($scope, $http) {
+      $scope.catList = [];
+      $http({
+        method: "GET",
+        url: "http://localhost:3000/danh-muc"
+      }).then(function (res) {
+        $scope.catList = res.data;
+        // console.log($scope.catList);
+      })
+
+
+    })//end
+
+    userApp.config(function ($routeProvider) {
+      $routeProvider
+        .when("/", {
+          templateUrl: "Pages/index.html",
+          controller: "indexCtrl"
+        })
+        // Sản phẩm
+        .when("/product/:idDM", {
+          templateUrl: "Pages/product.html",
+          controller: "productCtrl"
+        })
+        .when("/product-detail/:id", {
+          templateUrl: "Pages/detail.html",
+          controller: "detailCtrl"
+        })
+        .when("/product-cart", {
+          templateUrl: "Pages/cart.html",
+          controller: "cartCtrl"
+        })
+        .when("/product-pay/:id", {
+          templateUrl: "Pages/pay.html",
+          controller: "payCtrl"
+        })
+        .when("/product-success", {
+          templateUrl: "Pages/success.html"
+          
+        })
+        // Account
+        .when("/account-login", {
+          templateUrl: "Account/login.html",
+          controller: "loginCtrl"
+        })
+        .when("/account-forgot", {
+          templateUrl: "Account/forgot.html",
+          controller: "forgotCtrl"
+        })
+        .when("/account-regester", {
+          templateUrl: "Account/regester.html",
+          controller: "regesterCtrl"
+        })
+        
+
+    })
+
+  </script>
+  <!-- Link js -->
+  <script src="Pages/JavaScrip/index.js"></script>
+  <script src="Pages/JavaScrip/cart.js"></script>
+  <script src="Pages/JavaScrip/detail.js"></script>
+  <script src="Pages/JavaScrip/pay.js"></script>
+  <script src="Pages/JavaScrip/product.js"></script>
+  <!-- Account -->
+  <script src="Account/JavaScrip/forgot.js"></script>
+  <script src="Account/JavaScrip/login.js"></script>
+  <script src="Account/JavaScrip/regester.js"></script>
+
+
+</head>
+
+<body ng-app="userApp">
+
+  <!-- Navbar  -->
+  <div class="container" ng-controller="danhMucCtrl">
+    <nav class="navbar navbar-expand-sm">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="#!/"><img class="mw-100" style="max-height: 50px;" src="assets/images/logo2.webp" alt=""></a>
+          </li>
+        </ul>
+
+        <!-- Links -->
+        <ul class="navbar-nav fw-medium">
+          <li class="nav-item">
+            <a class="nav-link text-dark fs-5 lh-lg" href="index.html">Trang chủ</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link text-dark fs-5 lh-lg" href="#!product/all" id="navbarDropdown">
+              Sản phẩm
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li ng-repeat="item in catList track by $index">
+                <a class="dropdown-item text-dark fs-5 lh-lg" href="#!/product/{{item.id}}">{{item.ten}}</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-dark fs-5 lh-lg" href="#">Giới thiệu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark fs-5 lh-lg" href="#">Liên hệ</a>
+          </li>
+          <!-- Thêm mục Admin cho tài khoản admin đã đăng nhập -->
+          <!-- <li class="nav-item">
+            <a class="nav-link text-dark fs-5 lh-lg" href="admin.html">Admin</a>
+          </li> -->
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#!/account-login" id="navbarDropdown">
+              <i class="fa-regular fa-user"></i> Admin
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
+              <li><a class="dropdown-item" href="Admin">Trang admin</a></li>
+              <li><a class="dropdown-item" href="#!/account-login">Đăng xuất</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!product-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- Navbar end -->
+
+
+
+  <main>
+
+
+    <div class="my-2">
+      <ng-view></ng-view>
+    </div>
+
+  </main>
+
+  <footer class="bg-black text-white pt-5 ">
+    <div class="container  mb-16 ">
+
+      <div class="row row-cols-4">
+
+        <div>
+          <h3 class="font-semibold  mb-4">Địa chỉ</h3>
+          <p>13 phố Trịnh Văn Bô, phường Phương Canh, quận Nam Từ Liêm, TP Hà Nội</p>
+        </div>
+
+        <div class="">
+          <h3 class="font-semibold  mb-4">Danh mục</h3>
+          <ul class="list-unstyled">
+            <li class="mb-4 "><a class="text-decoration-none text-white" href="">Home</a></li>
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">Shop</a></li>
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">About</a></li>
+            <li><a class="text-decoration-none text-white" href="">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="d-flex flex-column">
+          <h3 class="font-semibold  mb-4">Hỗ trợ khách hàng</h3>
+          <ul class="list-unstyled">
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">Hướng dẫn mua hàng</a></li>
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">Chính sách giao hàng</a></li>
+            <li><a class="text-decoration-none text-white" href="">Chính sách đổi trả hoàn tiền</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-semibold  mb-4">Liên hệ</h3>
+          <ul class="list-unstyled">
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">manhndph46076@fpt.edu.vn</a></li>
+            <li class="mb-4"><a class="text-decoration-none text-white" href="">Hệ thống cửa hàng</a></li>
+            <li><a class="text-decoration-none text-white" href="">Trợ giúp</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="container mb-3">
+      <h3 class="font-semibold mb-3">Kết nối với chúng tôi</h3>
+      <div class="d-flex">
+        <a href="#" class="me-3 text-white"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="me-3 text-white"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="me-3 text-white"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <hr />
+    <div class="text-center py-3">
+      <p class="m-0">© 2024 Nguyen Duc Manh.</p>
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>

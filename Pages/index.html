@@ -1,0 +1,77 @@
+<!-- slide show  -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel" ng-if="showSlider">
+
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="bg-light ratio" style="--bs-aspect-ratio: calc(640 / 1920 * 100%)">
+        <div class="d-flex justify-content-center align-items-center">
+          <img src="assets/images/slider2.webp" class="d-block mw-100 mh-100">
+        </div>
+      </div>
+
+    </div>
+    <div class="carousel-item">
+      <div class="d-flex justify-content-center align-items-center">
+        <img src="assets/images/slider1.webp" class="d-block mw-100 mh-100">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="d-flex justify-content-center align-items-center">
+        <img src="assets/images/slider3.webp" class="d-block mw-100 mh-100">
+      </div>
+    </div>
+  </div>
+
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+<!-- slide show end  -->
+<div class="container ">
+
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h2 class="fs-1 mt-5">Sản phẩm mới</h2>
+  </div>
+
+  <!-- products  -->
+  <div class="row ">
+
+
+    <div class="col-md-3 my-3" ng-repeat="item in sanPham track by $index">
+      <div class="border rounded overflow-hidden">
+        <div class="bg-light ratio mt-" style="--bs-aspect-ratio: calc(600 / 485 * 100%)">
+          <div class="d-flex justify-content-center align-items-center ">
+            <a href="#!product-detail/{{item.id}}"><img class="img-hover mh-100 mw-100" src="" ng-src="{{item.anh}}"
+                alt="">
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-body-tertiary  mt- py-2 px-3">
+          <h3><a class="text-decoration-none fs-2 text-black" href="#!product-detail/{{item.id}}">{{item.ten}}</a></h3>
+          <p>{{item.moTa}} </p>
+          <div class="d-flex justify-content-between">
+            <p class="text-danger fs-5 fw-bold">{{item.giaBan}}đ</p>
+            <!-- <p class="text-danger fs-6 fw-bold text-decoration-line-through">{{item.giaNiemYet}}đ </p> -->
+          </div>
+          <a class="py-2  w-100 btn btn-outline-warning rounded-pill  fw-bold  btn-hv"
+            href="#!product-detail/{{item.id}}">Xem chi tiết</a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

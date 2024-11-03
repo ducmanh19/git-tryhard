@@ -1,0 +1,306 @@
+{
+  "danh-muc": [
+    {
+      "id": "DM01",
+      "ten": "Giày snakers "
+    },
+    {
+      "id": "DM02",
+      "ten": "Giày sandals"
+    },
+    {
+      "id": "DM03",
+      "ten": "Dép quai ngang"
+    }
+  ],
+  "tai-khoan": [
+    {
+      "id": "f9b0",
+      "hoTen": "Nguyễn Đức Mạnh",
+      "sdt": 354552402,
+      "diaChi": "Hà Nội",
+      "email": "manhndph46076@fpt.edu.vn",
+      "matKhau": "1234567"
+    }
+  ],
+  "gio-hang": [
+    {
+      "id": "SP01",
+      "ten": "Chunky Liner SL Saffiano",
+      "anh": "assets\\images\\07sbl_3ashbpn3n_2_5b008ed389e8479285d3d23591df6d2b_a26a9c34f9d849d29acff6c0c29383c1_grande.webp",
+      "moTa": "MLB - Giày sneakers unisex cổ thấp",
+      "giaBan": 3590000,
+      "giaNiemYet": "3,590,000",
+      "tenDanhMuc": "Giày snakers ",
+      "idDanhMuc": "DM01",
+      "soLuong": 3,
+      "quantity": 2
+    },
+    {
+      "id": "SP02",
+      "ten": "Chunky Runner Race",
+      "anh": "assets\\images\\50bks_3ashcrr3n_2_42f5183035d1463789699d4bb6b01e81_24d51abb8eb64d3dab869d144fe7578e_grande.webp",
+      "moTa": "MLB - Giày sneakers unisex cổ thấp",
+      "giaBan": 2081000,
+      "giaNiemYet": "2,081,000 ",
+      "tenDanhMuc": "Giày sandals",
+      "idDanhMuc": "DM02",
+      "soLuong": 15,
+      "quantity": 2
+    }
+  ],
+  "orders": [
+    {
+      "id": "26c2",
+      "id_user": "f9b0",
+      "full_name": "Nguyễn Đức Mạnh",
+      "email": "manhndph46076@fpt.edu.vn",
+      "address": "Hà Nội",
+      "phone_number": "354552402",
+      "products": [
+        {
+          "id": "SP01",
+          "name": "ÁChunky Liner SL Saffiano",
+          "quantity": 2,
+          "image_url": "assets\\images\\07sbl_3ashbpn3n_2_5b008ed389e8479285d3d23591df6d2b_a26a9c34f9d849d29acff6c0c29383c1_grande.webp",
+          "price": 3590000
+        },
+        {
+          "id": "SP02",
+          "name": "Chunky Runner Race",
+          "quantity": 2,
+          "image_url": "assets\\images\\50bks_3ashcrr3n_2_42f5183035d1463789699d4bb6b01e81_24d51abb8eb64d3dab869d144fe7578e_grande.webp",
+          "price": 2081000
+        }
+      ],
+      "soLuong": "2",
+      "total_price": 11372000,
+      "status": "Chờ xác nhận",
+      "date": "08/05/2024"
+    },
+    {
+      "id": "d586",
+      "id_user": "834a",
+      "full_name": "Nguyen Huu Han",
+      "email": "huymamicoi@gmail.com",
+      "address": "Tan Hoi - Dan Phuong - Ha Noi",
+      "phone_number": "0943619586",
+      "products": [
+        {
+          "id": "c55b",
+          "name": "Áo Khoác Chần Bông",
+          "quantity": 3,
+          "image_url": "https://routine.vn/media/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-khoac-nam-10f23jac007_black_1__1_1.jpg",
+          "price": 20
+        },
+        {
+          "id": "3",
+          "name": "Áo Khoác Chần Bông Nam Sát Nách Khóa Kéo Form Regular - 10F23JAC025",
+          "quantity": 2,
+          "image_url": "https://routine.vn/media/amasty/amoptmobile/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-khoac-nam-10f23jac025_black_1__1_1_jpg.webp",
+          "price": 90.5
+        }
+      ],
+      "soLuong": "2",
+      "total_price": 7180000,
+      "status": "Đang vận chuyển",
+      "date": "08/05/2024"
+    },
+    {
+      "id": "e09d",
+      "id_user": "834a",
+      "full_name": "Nguyen Tran Phuong Tuan ",
+      "email": "huymamicoi@gmail.com",
+      "address": "Tan Hoi - Dan Phuong - Ha Noi",
+      "phone_number": "0943619586",
+      "products": [
+        {
+          "id": "c55b",
+          "name": "Áo Khoác Chần Bông",
+          "quantity": 2,
+          "image_url": "https://routine.vn/media/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-khoac-nam-10f23jac007_black_1__1_1.jpg",
+          "price": 20
+        }
+      ],
+      "soLuong": "1",
+      "total_price": 1130500,
+      "status": "Đang giao",
+      "date": "08/05/2024"
+    },
+    {
+      "id": "298e",
+      "id_user": "6659",
+      "full_name": "Thuy Tan Hoang",
+      "email": "tantantan@gmail.com",
+      "address": "Ly Nam - Quang Dong - Tung Cua",
+      "phone_number": "0369875698",
+      "products": [
+        {
+          "id": "c55b",
+          "name": "Áo Khoác Chần Bông",
+          "quantity": 1,
+          "image_url": "https://routine.vn/media/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-khoac-nam-10f23jac007_black_1__1_1.jpg",
+          "price": 20
+        },
+        {
+          "id": "3",
+          "name": "Áo Khoác Chần Bông Nam Sát Nách Khóa Kéo Form Regular - 10F23JAC025",
+          "quantity": 1,
+          "image_url": "https://routine.vn/media/amasty/amoptmobile/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-khoac-nam-10f23jac025_black_1__1_1_jpg.webp",
+          "price": 90.5
+        }
+      ],
+      "soLuong": "2",
+      "total_price": 8180300,
+      "status": "Đã giao",
+      "date": "08/05/2024"
+    },
+    {
+      "id": "128v",
+      "id_user": "6659",
+      "full_name": "Hoàng Văn Tùng",
+      "email": "hoangvanhuy@gmail.com",
+      "address": "Tu Hiep - Ha Hoa - Phu Tho",
+      "phone_number": "0369875698",
+      "products": [
+        {
+          "id": "c55b",
+          "name": "Áo Khoác Chần Bông",
+          "quantity": 1,
+          "image_url": "https://routine.vn/media/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-khoac-nam-10f23jac007_black_1__1_1.jpg",
+          "price": 20
+        },
+        {
+          "id": "3",
+          "name": "Áo Khoác Chần Bông Nam Sát Nách Khóa Kéo Form Regular - 10F23JAC025",
+          "quantity": 1,
+          "image_url": "https://routine.vn/media/amasty/amoptmobile/catalog/product/cache/5b5632a96492396f42c72e22fdd64763/a/o/ao-khoac-nam-10f23jac025_black_1__1_1_jpg.webp",
+          "price": 90.5
+        }
+      ],
+      "soLuong": "2",
+      "total_price": 5120030,
+      "status": "Đã hủy",
+      "date": "08/05/2024"
+    }
+  ],
+  "dat-hang": [
+    {
+      "id": "IP3854",
+      "ngayDat": "2024-07-19",
+      "soLuong": 2,
+      "trangThai": "Chờ xác nhận",
+      "thanhTien": 20000000,
+      "hoTen": "NGuyễn Tên",
+      "sdt": 123456789,
+      "diaChi": "Hà Nội",
+      "email": "nguyenmanha3k24@gmail.com",
+      "idSP": "SP01",
+      "ten": "Chunky Liner SL Saffiano",
+      "anh": "assets/images/50bks_3asxccw4n_2_bb40200e8da44811a0ecdc447e29ec25_427be735f93c4061a1832d3931904ef7_grande.webp",
+      "giaBan": 3000,
+      "quantity": 3,
+      "tongTien": 2000000
+    }
+  ],
+  "san-pham": [
+    {
+      "id": "SP01",
+      "ten": "Chunky Liner SL Saffiano",
+      "anh": "assets\\images\\07sbl_3ashbpn3n_2_5b008ed389e8479285d3d23591df6d2b_a26a9c34f9d849d29acff6c0c29383c1_grande.webp",
+      "moTa": "MLB - Giày sneakers unisex cổ thấp",
+      "giaBan": 3590000,
+      "giaNiemYet": "3,590,000",
+      "tenDanhMuc": "Giày snakers ",
+      "idDanhMuc": "DM01",
+      "soLuong": 3
+    },
+    {
+      "id": "SP02",
+      "ten": "Chunky Runner Race",
+      "anh": "assets\\images\\50bks_3ashcrr3n_2_42f5183035d1463789699d4bb6b01e81_24d51abb8eb64d3dab869d144fe7578e_grande.webp",
+      "moTa": "MLB - Giày sneakers unisex cổ thấp",
+      "giaBan": 2081000,
+      "giaNiemYet": "2,081,000 ",
+      "tenDanhMuc": "Giày sandals",
+      "idDanhMuc": "DM02",
+      "soLuong": 15
+    },
+    {
+      "id": "SP03",
+      "ten": "Chunky Liner Mid Classic",
+      "anh": "assets\\images\\50gns_3asdcbc33_3_d6751c67ae0b4cfaa5a1182b2aaac113_6bf5c7aee5bd4d8f9880dfb655c8dde9_grande.webp",
+      "moTa": "MLB - Giày sneakers unisex cổ thấp",
+      "giaBan": 3081000,
+      "giaNiemYet": "2,081,000 ",
+      "tenDanhMuc": "Dép quai ngang",
+      "idDanhMuc": "DM03",
+      "soLuong": 5
+    },
+    {
+      "id": "SP4",
+      "ten": "Chunky Liner Mid Saffiano",
+      "anh": "assets\\images\\50bks_3asdcsd33_1_6e546487f6b640e189929233087ebdff_a9e11e0038d040ea96f7af0a8b6eca90_grande.webp",
+      "moTa": "MLB - Giày sneakers unisex cổ thấp",
+      "giaBan": 3790000,
+      "giaNiemYet": "2,081,000 ",
+      "tenDanhMuc": "Dép quai ngang",
+      "idDanhMuc": "DM03",
+      "soLuong": 2
+    },
+    {
+      "id": "SP5",
+      "ten": "Chunky Liner Mid Saffiano",
+      "anh": "assets\\images\\50crs_3asdch133_3_05c365a63711438bbb3870ea40d15c60_d3892fb2d4974a24a34b567892c08973_grande.webp",
+      "moTa": "MLB - Giày sneakers unisex cổ thấp",
+      "giaBan": 1081000,
+      "giaNiemYet": "2,081,000 ",
+      "tenDanhMuc": "Giày sandals",
+      "idDanhMuc": "DM02",
+      "soLuong": 3
+    },
+    {
+      "id": "SP6",
+      "ten": "Chunky Runner Race",
+      "anh": "assets/images/50sis_3arncrl4n_2_1d5fccbf3bd445c78d5873eb7435c4c4_47112259284743aa8d04766b00e560ea_grande.webp",
+      "moTa": "MLB - Giày sneakers unisex cổ thấp",
+      "giaBan": 4190000,
+      "giaNiemYet": "2,081,000 ",
+      "tenDanhMuc": "Giày sandals",
+      "idDanhMuc": "DM02",
+      "soLuong": 7
+    },
+    {
+      "id": "SP7",
+      "ten": "Chunky Liner Mid Classic",
+      "anh": "assets/images/50pks_3asxcmm4n_2_2759bf1e070948c1bbb3b81b5d274158_a01effb36e084c5493880fabbe9bdf05_grande.webp",
+      "moTa": "MLB - Giày sneakers unisex cổ thấp",
+      "giaBan": 2181000,
+      "giaNiemYet": "3,590,000",
+      "tenDanhMuc": "Giày snakers ",
+      "idDanhMuc": "DM01",
+      "soLuong": 2
+    },
+    {
+      "id": "SP08",
+      "ten": "Chunky Liner Mid Saffiano",
+      "anh": "assets\\images\\07bls_3asxlmf3n_2_5ebe4a60d816467d95b1c7ad421b42b3_c60b51e74ead453683fe294a2cc94784_grande.webp",
+      "moTa": "MLB - Giày sneakers unisex cổ thấp",
+      "giaBan": 2381000,
+      "giaNiemYet": "3,590,000",
+      "tenDanhMuc": "Giày snakers ",
+      "idDanhMuc": "DM01",
+      "soLuong": 5
+    },
+    {
+      "id": "b9a4",
+      "ten": "Thêm sản phẩm mới",
+      "moTa": "abc",
+      "giaBan": 1111,
+      "idDanhMuc": "DM03",
+      "tenDanhMuc": "Dép quai ngang",
+      "soLuong": 1,
+      "anh": "assets\\images\\07sbl_3ashbpn3n_2_5b008ed389e8479285d3d23591df6d2b_a26a9c34f9d849d29acff6c0c29383c1_grande.webp"
+    }
+  ]
+}
